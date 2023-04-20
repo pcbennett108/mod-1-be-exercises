@@ -8,7 +8,7 @@ class Wizard
     end
 
     def bearded?
-        @bearded
+        bearded
     end
 
     def incantation(incant)
@@ -16,25 +16,27 @@ class Wizard
     end
 
     def rested?
-        @rested
+        return false if spells_cast >= 3
+        rested
     end
 
     def cast
         @spells_cast += 1
-        if @spells_cast < 3
-            "MAGIC MISSILE!"
-        elsif @spells_cast = 3
-            @rested = false
-            "MAGIC MISSILE!"
-        else
-            "Too tired to cast,"
-        end
+        "MAGIC MISSILE!"
+        # if @spells_cast < 3
+        #     "MAGIC MISSILE!"
+        # elsif @spells_cast == 3
+        #     @rested = false
+        #     "MAGIC MISSILE!"
+        # else
+        #     "Too tired to cast,"
+        # end
     end
 end
 
 # wizard2 = Wizard.new('Sal', bearded: true)
 # p wizard2
-# #p wizard2.bearded?
+# p wizard2.bearded?
 # p wizard2.rested?
 # p wizard2.cast
 # p wizard2.cast
