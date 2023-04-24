@@ -6,8 +6,13 @@ class Hobbit
         @age = 0
         @adult = false
         @old = false
-        @has_ring = false
+        @has_ring = ring_holder
         @is_short = true
+    end
+
+    def ring_holder
+        return true if self.name == "Frodo"
+        false
     end
 
     def celebrate_birthday
@@ -15,27 +20,24 @@ class Hobbit
     end
 
     def adult?
-        if @age >= 33
+        if age >= 33
             @adult = true
         end
-        @adult
+        adult
     end
 
     def old?
-        if @age >= 101
+        if age >= 101
             @old = true
         end
-        @old
+        old
     end
 
-    def has_ring? # Only changes has_ring if checked, not on creation.
-        if @name == "Frodo"
-            @has_ring = true
-        end
-        @has_ring
+    def has_ring?
+        has_ring
     end
 
     def is_short?
-        @is_short
+        is_short
     end
 end
