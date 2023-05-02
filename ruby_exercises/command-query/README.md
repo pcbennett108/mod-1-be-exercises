@@ -35,13 +35,13 @@ These exercises focus on these two types of operations.
 - `roll_call_spec.rb`
 - `santa_spec.rb`
 - `dog_spec.rb`
-- `children_spec.rb`
+- `children_spec.rb` NEEDS COMPLETED ???
 - `water_spec.rb`
 - `clock_spec.rb`
 - `appointments_spec.rb`
 - `yak_spec.rb`
 - `money_spec.rb`
-- `cupcake_spec.rb`
+- `cupcake_spec.rb`  NEEDS COMPLETED ???
 - `student_spec.rb`
 - `catalogue_spec.rb`
 - `wallet_spec.rb`
