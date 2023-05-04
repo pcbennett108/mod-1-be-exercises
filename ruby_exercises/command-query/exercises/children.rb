@@ -1,21 +1,14 @@
 require_relative 'child'
 
 class Children
-    attr_reader :family
+    attr_reader :eldest, :family
     def initialize
-        @family = {}
-    end
-    def eldest
-        nil
+        @eldest = nil
+        @family = []
     end
     def <<(child)
-        @family[child.name] = child.age
+        family << child
+        family.sort_by! { |child| child.age}
+        @eldest = family.last
     end
-
 end
-
-
-children = Children.new
-children << Child.new('Sarah', 5)
-
-p children.family

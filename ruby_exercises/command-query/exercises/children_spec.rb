@@ -9,14 +9,14 @@ RSpec.describe Children do
     expect(children.eldest).to be_nil
   end
 
-  xit 'has one eldest' do
+  it 'has one eldest' do
     children = Children.new
     children << Child.new('Sarah', 5)
 
     expect(children.eldest.name).to eq('Sarah')
   end
 
-  xit 'gets the eldest of several' do
+  it 'gets the eldest of several' do
     children = Children.new
     children << Child.new('Robert', 2)
     children << Child.new('Fran', 8)
