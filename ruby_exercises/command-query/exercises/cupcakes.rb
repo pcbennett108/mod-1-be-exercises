@@ -1,31 +1,25 @@
 require_relative 'cupcake'
 
 class Cupcakes
-    attr_reader :tray, :flavor
+    attr_reader :sweetest, :tray
     def initialize
-        @tray = {}
-    end
-    def sweetest
-        if tray.empty?
-            nil
-        else
-            sweetest = tray.sort_by { |key, value| value }.last
-            # flavor = sweetest.first
-        end
-    end
-    def flavor
-        sweetest.first
+        @sweetest = nil
+        @tray = []
     end
     def <<(cupcake)
-        @tray[cupcake.flavor] = cupcake.sugar
+        tray << cupcake
+        tray.sort_by! { |item| -item.sugar }
+        @sweetest = tray.first
     end
 
 end
+
+
 
 cupcakes = Cupcakes.new
 cupcakes << Cupcake.new('Carrot', 5)
 cupcakes << Cupcake.new('Caramel', 12)
 cupcakes << Cupcake.new('Chocolate', 8)
-# p cupcakes.tray.sort_by { |key, value| value }.last
-p cupcakes.flavor
-#? Can call sweetest OR flavor but NOT sweetest.flavor ???
+
+p cupcakes.tray
+p cupcakes.sweetest.flavor

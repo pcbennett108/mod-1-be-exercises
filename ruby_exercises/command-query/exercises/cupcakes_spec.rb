@@ -8,14 +8,14 @@ RSpec.describe Cupcakes do
     expect(cupcakes.sweetest).to be_nil
   end
 
-  xit 'has a sweetest with one cupcake' do
+  it 'has a sweetest with one cupcake' do
     cupcakes = Cupcakes.new
     cupcakes << Cupcake.new('Carrot', 5) # 5 grams of sugar
 
     expect(cupcakes.sweetest.flavor).to eq('Carrot')
   end
 
-  xit 'has a sweetest cupcake' do
+  it 'has a sweetest cupcake' do
     cupcakes = Cupcakes.new
     cupcakes << Cupcake.new('Carrot', 5)
     cupcakes << Cupcake.new('Caramel', 12)
